@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+
+.form {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+
+  .info {
+    gap: 0.4rem;
+
+    label {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    input,
+    select {
+      padding: 12px 1rem;
+      border: 1px solid #cccccc;
+      box-shadow: 0px 2px 2px 2px rgba(204, 204, 204, 0.1);
+      border-radius: 4px;
+    }
+
+    input::placeholder {
+      font-size: 12px;
+      line-height: 16px;
+      color: #cccccc;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 400;
+    }
+  }
+
+  .btn-wrapper {
+    position: relative;
+    width: 130px;
+    text-align: center;
+    cursor: pointer;
+
+    .label {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      cursor: pointer;
+      padding: 12px 16px;
+      font-size: 12px;
+      border: 1px solid #000000;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 2px 2px rgba(204, 204, 204, 0.1);
+      border-radius: 4px;
+    }
+
+    #upload {
+      display: inline-block;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+
+  .content-wrapper {
+    align-items: center;
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    input {
+      &:last-child {
+        flex: 2;
+      }
+    }
+  }
+  .choose-phone-button__wrapper {
+    display: flex;
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .choose-phone-button {
+    flex-grow: 1;
+    outline: none;
+    border: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+      0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding-right: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+
+    &:nth-child(2) {
+      border-radius: 1rem 0 0 1rem;
+      margin-left: 1rem;
+    }
+
+    &:last-child {
+      border-radius: 0 1rem 1rem 0;
+    }
+  }
+}
+
+.empty {
+  border: 1px solid red !important;
+}
+
+.delete-button {
+  position: relative;
+  background: #efefef;
+  border-radius: 100vmax;
+  width: 2.5rem;
+  height: 2.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.7rem;
+
+  color: #1f1549;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  &:hover {
+    filter: brightness(0.9);
+  }
+  &:active {
+    filter: brightness(0.8);
+  }
+}

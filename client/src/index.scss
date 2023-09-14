@@ -1,0 +1,66 @@
+:root {
+	font-family: Inter, Avenir;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	background: #FFF;
+	color: #000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+// LAYOUT //
+
+.gap05 {
+	gap: 0.5rem;
+}
+
+
+.row {
+	display: flex;
+
+}
+
+
+
+.col {
+	display: flex;
+	flex-direction: column;
+  margin-top: 0.8rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+	display: block;
+}
+
+.inline {
+	display: inline;
+	vertical-align: middle;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.mt25 {
+	margin-top: 0.25rem;
+}
+
+.mt1 {
+	margin-top: 1rem;
+}
+
+.relative {
+	position: relative;
+}
+
+
+

@@ -1,0 +1,20 @@
+
+Td 
+    inline style not accept width or height
+    attribute width or height not accept px after number
+
+
+Version 1.0.0  Left content Positioning
+Version 1.1.0 Name & firstname
+Version 1.2.0 Poste & Telephone & Location
+Version 1.3.0 Positioning valign
+
+
+
+How to add languages and translations
+
+- Go to utils/models/languages.js
+- Add a new language object
+
+- Go to utils/contents/formInfo.js
+- Add new object of label and value in each category as the exact same order as in model

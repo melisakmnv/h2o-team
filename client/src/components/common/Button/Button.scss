@@ -1,0 +1,122 @@
+.copy-btn {
+  background: #E5554F;
+  position: relative;
+  height: 45px;
+  width: 150px;
+  appearance: button;
+  background-image: none;
+  border: none;
+  border-radius: 20px;
+  box-shadow: #fff 0px 3px 0px 0px, #5d3b27 0px 5px 0 -1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  min-width: 15%;
+
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: #c74844;
+    text-decoration: none;
+  }
+
+  &:active {
+    outline: 0;
+  }
+
+  &:not([disabled]):active {
+    box-shadow: #fff 0px 1px 1px 1px, #27485d 0px 2px 2px 0px;
+    transform: translate(2px, 2px);
+  }
+}
+
+@media (min-width: 768px) {
+  .copy-btn {
+    padding: 12px 50px;
+  }
+}
+
+/* CSS */
+.cancel-btn {
+  color: #ff4742;
+  font-weight: 700;
+  background: none;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    color: #d33b36;
+  }
+}
+
+.cancel-btn:active {
+  opacity: 0.5;
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background: none;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apply-btn {
+  width: 150px;
+  max-height: 100%;
+  background: #27485d;
+  border: none;
+  border-radius: 100vmax;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: grid;
+  align-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  font-weight: 400;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.lang-btn {
+  position: relative;
+  background: none;
+  border: 2px solid gray;
+  padding: 0.3rem 1.5rem;
+  border-radius: 50px;
+  color: #2e0dd1;
+  cursor: pointer;
+}
