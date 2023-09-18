@@ -20,11 +20,18 @@ export const FormTeam = (props) => {
                 maxLength={formInfo._LASTNAME.LANGUAGE[language.index].LETTER_MAX}
             />
 
-            <InputText
+            {/* <InputText
                 {...generateFormInfo(formKeys._TELEPHONE, language.index, formData, formErrors, handleChange)}
                 maxLength={inputsConfig.maxPhoneLenght}
                 onKeyDown={true}
                 phone={true}>
+            </InputText> */}
+
+            <InputText
+                {...generateFormInfo(formKeys._TELEPHONE, language.index, formData, formErrors, handleChange)}
+                maxLength={inputsConfig.maxPhoneLenght}
+                onKeyDown={true}
+                phone={true}>  <InputPhoneArea {...generateFormInfo(formKeys._PHONEAREA, language.index, formData, formErrors, handleChange)} />
             </InputText>
 
 

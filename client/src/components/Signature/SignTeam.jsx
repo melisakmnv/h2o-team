@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconLink, Cell, Row, Table } from '../common'
 import { Avatar, Info, User } from './Elements'
-import { IDS, signatureInfo, signatureStyle } from '../../utils'
+import { IDS, signatureInfo, signatureStyle, formatNumber } from '../../utils'
 
 
 export const SignTeam = ({ formData, language }) => {
@@ -174,15 +174,33 @@ export const SignTeam = ({ formData, language }) => {
                                                                             >
                                                                                 {
                                                                                     icon.id === IDS.TELEPHONE_ICON ?
-                                                                                        (formData.telephone ?
-                                                                                            (<a
-                                                                                                href={`tel:${formData.telephone}`}
-                                                                                                target="_blank"
-                                                                                                role="Telephone Number"
-                                                                                                style={{ textDecoration: "none", color: "#201747" }}
-                                                                                            >
-                                                                                                {formData.telephone.replace(/(.{2})/g, '$& ',)}
-                                                                                            </a>) : signatureInfo.userInfo.contact.LANG[language.index].placeHolder
+                                                                                        // (formData.telephone ?
+                                                                                        //     (<a
+                                                                                        //         href={`tel:${formData.telephone}`}
+                                                                                        //         target="_blank"
+                                                                                        //         role="Telephone Number"
+                                                                                        //         style={{ textDecoration: "none", color: "#201747" }}
+                                                                                        //     >
+                                                                                        //         {formData.telephone.replace(/(.{2})/g, '$& ',)}
+                                                                                        //     </a>) : signatureInfo.userInfo.contact.LANG[language.index].placeHolder
+                                                                                        // )
+
+
+                                                                                        (icon.id === IDS.TELEPHONE_ICON ?
+                                                                                            (formData.telephone ?
+                                                                                                (<a
+                                                                                                    href={`tel:${formData.telephone}`}
+                                                                                                    target="_blank"
+                                                                                                    role="Telephone Number"
+                                                                                                    style={{ textDecoration: "none", color: "#201747" }}
+                                                                                                >
+                                                                                                    {`+${formData.phonearea} `}
+                                                                                                    {/* {setPhoneNumber(formData.telephone)} */}
+                                                                                                    {formatNumber(formData.telephone, formData.phonearea)}
+                                                                                                </a>) :
+                                                                                                ((formData.phonearea ? `+${formData.phonearea} ` : "+XX ") + signatureInfo.userInfo.contact.LANG[language.index].placeHolder)
+                                                                                            )
+                                                                                            : (formData.activity ? formData.activity : signatureInfo.userInfo.contact.placeHolder_Loc)
                                                                                         )
 
                                                                                         : icon.id === IDS.LOCATION_ICON ?
