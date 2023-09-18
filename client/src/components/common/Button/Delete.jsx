@@ -23,10 +23,10 @@ export const Delete = (props) => {
 }
 
 const trashStyle = {
-  position: 'absolute',
-  height: "200px",
-  with: "200px",
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%) scale(1.5)',
+//   position: 'absolute',
+  height: "70%",
+//   with: "200px",
+//   top: '50%',
+//   left: '50%',
+//   transform: 'translate(-50%, -50%) scale(1.5)',
 };
