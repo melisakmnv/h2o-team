@@ -3,6 +3,7 @@ import Tippy from "@tippyjs/react";
 import { hoverMessage, formErrorMessages } from "../../../utils";
 import { maxImageWeight, maxImageWeightInMB } from "../../../constants/uploadConfig.js";
 import { Delete } from "../../common/Button";
+import { HoverMessage } from "../../common/Hover/Hover";
 
 export const InputFile = ({
 	label,
@@ -52,7 +53,9 @@ export const InputFile = ({
 						placement="bottom"
 						theme="dark"
 						content={
-							hoverMessage.limiteSizeMessage.LANGUAGE[language.index].MESSAGE
+							<HoverMessage>
+								{hoverMessage.limiteSizeMessage.LANGUAGE[language.index].MESSAGE}
+							</HoverMessage>
 						}
 					>
 						<div

@@ -189,7 +189,7 @@ export const SignTeam = ({ formData, language }) => {
                                                                                         (icon.id === IDS.TELEPHONE_ICON ?
                                                                                             (formData.telephone ?
                                                                                                 (<a
-                                                                                                    href={`tel:${formData.telephone}`}
+                                                                                                    href={`tel:+${formData.phonearea}${formData.telephone}`}
                                                                                                     target="_blank"
                                                                                                     role="Telephone Number"
                                                                                                     style={{ textDecoration: "none", color: "#201747" }}

@@ -7,6 +7,7 @@ import 'tippy.js/themes/light.css';
 import { buttonMessage, hoverMessage } from '../../../utils';
 import Checked from '../../../assets/lotties/checked.json';
 import Error from '../../../assets/lotties/error.json';
+import { HoverMessage } from '../Hover/Hover';
 
 export const Copy = ({ onCopy, isCopied, verifyInputErrors, formErrors, language }) => {
   const defaultButtonContent = buttonMessage.COPY.LANGUAGE[language.index].MESSAGE;
@@ -61,7 +62,12 @@ useEffect(() => {
   };
 
   return (
-    <Tippy theme="light" content={hoverMessage.copyMessage.LANGUAGE[language.index].MESSAGE}>
+    <Tippy theme="light"
+    content={
+      <HoverMessage>
+        {hoverMessage.copyMessage.LANGUAGE[language.index].MESSAGE}
+      </HoverMessage>
+    }>
       <button
         id="copy-button"
         data-clipboard-target="#sigA"
