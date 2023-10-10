@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { ref, getDownloadURL, uploadString } from 'firebase/storage'
+import { ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage'
 import { storage } from '../firebase/firebase';
 import { useToggle } from './useToggle';
 
