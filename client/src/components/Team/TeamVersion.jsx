@@ -27,6 +27,7 @@ export const TeamVersion = ({ language, setLanguage }) => {
                     setLanguage={setLanguage}
                     formErrors={formErrors}
                     setFormData={setFormData}
+                    formData={formData}
                 >
                     <FormTeam
                         formData={formData}

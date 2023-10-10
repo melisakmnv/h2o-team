@@ -15,7 +15,7 @@ $widescreen-up: 1440px;
     justify-content: space-between;
     height: 100vh;
     min-height: 100vh;
-    height: clamp(750px, 100vh, 220vh);
+    height: clamp(720px, 100vh, 220vh);
     background-image: url("./assets/bg.svg");
     background-repeat: no-repeat;
     background-size: cover;

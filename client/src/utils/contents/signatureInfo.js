@@ -22,26 +22,26 @@ export const signatureInfo = {
 
   illustrations: {
     avatar: {
-      src: mode === "DEV" ? "https://u.cubeupload.com/Sono/colibriavatar.png" : avatarPlaceholder,
+      src: avatarPlaceholder,
       alt: "Profile",
     },
     logo: {
-      src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/logo-mini2-06a17a45.png" : logo,
+      src: logo,
       alt: "H20 Logo",
       link: "https://www.h2oathome.fr/",
     },
 
     joinLink: {
-      src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/bouton-8e74b5b5.png" : join,
+      src: join,
       alt: "Join Social Button",
       LANGUAGE: [
         {
           ID: "FR",
-          src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/bouton-8e74b5b5.png" : join,
+          src: join,
         },
         {
           ID: "NL",
-          src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/bouton-8e74b5b5.png" : join_nl,
+          src: join_nl,
         },
       ]
     },
@@ -51,19 +51,19 @@ export const signatureInfo = {
       top: [
         {
           id: "PINTEREST_ICON",
-          src: mode === "DEV" ? "https://mailsignature-team.vercel.app/assets/pinterest-196e0559.png" : pinterest,
+          src: pinterest,
           alt: "Pinterest Icon",
           link: "https://www.pinterest.fr/h2oathomefrance/"
         },
         {
           id: "TIKTOK_ICON",
-          src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/tk-a69993b3.png" : tiktok,
+          src: tiktok,
           alt: "Tiktok Icon",
           link: "https://www.tiktok.com/@h2oathomeofficiel"
         },
         {
           id: "LIKEDIN_ICON",
-          src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/lk-500c4c9a.png" : likedin,
+          src: likedin,
           alt: "LinkedIn Icon",
           link: "https://www.linkedin.com/company/h2o-at-home-france/"
         }
@@ -71,19 +71,19 @@ export const signatureInfo = {
       bottom: [
         {
           id: "FACEBOOK_ICON",
-          src: mode === "DEV" ? "https://mailsignature-team.vercel.app/assets/facebook-5b1a7978.png" : facebook,
+          src: facebook,
           alt: "Facebook Icon",
           link: "https://www.facebook.com/h2oathomefrance/"
         },
         {
           id: "YOUTUBE_ICON",
-          src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/yt-1d2cb977.png" : youtube,
+          src: youtube,
           alt: "Youtube Icon",
           link: "https://www.youtube.com/channel/UC55WYroF4_hj8MV1GBMlouQ"
         },
         {
           id: "INSTAGRAM_ICON",
-          src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/ig-e308393f.png" : instagram,
+          src: instagram,
           alt: "Instagram Icon",
           link: "https://www.instagram.com/h2oathomefrance/"
         }
@@ -93,12 +93,12 @@ export const signatureInfo = {
     iconContacts: [
       {
         id: "TELEPHONE_ICON",
-        src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/tel-394413a0.png" : tel,
+        src: tel,
         atl: "Telephone Icon",
       },
       {
         id: "LOCATION_ICON",
-        src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/loc-d7a1b62f.png" : loc,
+        src: loc,
         atl: "Location Icon",
       },
 
@@ -107,12 +107,12 @@ export const signatureInfo = {
     iconContacts_team: [
       {
         id: "TELEPHONE_ICON",
-        src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/tel-394413a0.png" : tel,
+        src: tel,
         atl: "Telephone Icon",
       },
       {
         id: "LOCATION_ICON",
-        src: mode === "DEV" ? "https://mailsignature-275b.vercel.app/assets/loc-d7a1b62f.png" : loc,
+        src: loc,
         atl: "Location Icon",
       },
       {

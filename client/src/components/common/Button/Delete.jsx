@@ -1,32 +1,50 @@
 import React, { useRef } from 'react'
 import Trash from '../../../assets/lotties/trash.json'
 import Lottie, { useLottie } from 'lottie-react';
+import { signatureInfo } from '../../../utils';
 
-export const Delete = (props) => {
-
-  const lottieRef = useRef();
-
-  const handleDelete = () => {
-    props.onDelete()
-
-    lottieRef.current.play()
-  }
+import './Button.scss'
+import Tippy from '@tippyjs/react';
+import { HoverMessage } from '../Hover/Hover';
 
 
-  return (
-    <div>
-      <button onClick={handleDelete} className='delete-button'>
-        <Lottie lottieRef={lottieRef} autoPlay={true} loop={false} animationData={Trash} style={trashStyle} width="100" height='100'/>
-      </button>
-    </div>
-  )
+export const Delete = ({ onDelete, formData }) => {
+
+	const lottieRef = useRef();
+
+	const handleDelete = () => {
+		console.log("clicked")
+		onDelete()
+		lottieRef.current.play()
+	}
+
+
+	return (
+		<div>
+			<Tippy
+				placement="bottom"
+				theme="dark"
+				content={
+					<HoverMessage>
+						<span>Supprimer photo</span>
+					</HoverMessage>
+				}
+			>
+
+				<button
+					disabled={formData.profile === signatureInfo.illustrations.avatar.src}
+					onClick={handleDelete}
+					className='delete-button'
+					type="button"
+					style={{ cursor: formData.profile === signatureInfo.illustrations.avatar.src ? "not-allowed" : "pointer" }}
+				>
+					<Lottie lottieRef={lottieRef} autoPlay={true} loop={false} animationData={Trash} style={trashStyle} width="100" height='100' />
+				</button>
+			</Tippy>
+		</div>
+	)
 }
 
 const trashStyle = {
-//   position: 'absolute',
-  height: "70%",
-//   with: "200px",
-//   top: '50%',
-//   left: '50%',
-//   transform: 'translate(-50%, -50%) scale(1.5)',
+	height: "70%",
 };

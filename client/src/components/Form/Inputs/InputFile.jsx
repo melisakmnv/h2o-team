@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Tippy from "@tippyjs/react";
-import { hoverMessage, formErrorMessages } from "../../../utils";
+import { hoverMessage, formErrorMessages, signatureInfo } from "../../../utils";
 import { maxImageWeight, maxImageWeightInMB } from "../../../constants/uploadConfig.js";
 import { Delete } from "../../common/Button";
 import { HoverMessage } from "../../common/Hover/Hover";
@@ -13,7 +13,8 @@ export const InputFile = ({
 	toggleCropModal,
 	error,
 	language,
-	onDelete
+	onDelete,
+	formData = { formData }
 }) => {
 	const [inputKey, setInputKey] = useState(0);
 
@@ -54,28 +55,46 @@ export const InputFile = ({
 						theme="dark"
 						content={
 							<HoverMessage>
-								{hoverMessage.limiteSizeMessage.LANGUAGE[language.index].MESSAGE}
+								{
+									formData.profile === signatureInfo.illustrations.avatar.src ?
+										hoverMessage.limiteSizeMessage.LANGUAGE[language.index].MESSAGE
+										: <span>
+											Il faut supprimer l'ancienne photo d'abord
+										</span>
+
+								}
 							</HoverMessage>
 						}
 					>
 						<div
 							className="btn-wrapper"
-							style={{ border: error ? "1px solid red" : "none" }}
-						>
-							<button className="label upload-button">{placeholder}</button>
+							style={{ border: error ? "1px solid red" : "none" }}>
+							<button
+								disabled={formData.profile !== signatureInfo.illustrations.avatar.src ? true : false}
+								className="label upload-button"
+								style={{
+									cursor: formData.profile !== signatureInfo.illustrations.avatar.src ? "not-allowed" : "pointer",
+									border: formData.profile !== signatureInfo.illustrations.avatar.src ? "1px solid #cccccc" : "1px solid black"
+								}}
+							>{
+									placeholder}</button>
 
-							<input
-								key={inputKey}
-								className="form--input"
-								accept="image/*"
-								type="file"
-								onChange={handleFileChange}
-								id={id}
-							/>
+							{
+								formData.profile === signatureInfo.illustrations.avatar.src &&
+								(<input
+
+									key={inputKey}
+									className="form--input"
+									accept="image/*"
+									type="file"
+									onChange={handleFileChange}
+									id={id}
+								/>)
+							}
 						</div>
 					</Tippy>
-
-					<Delete onDelete={onDelete}/>
+					{/* <Delete onDelete={onDelete} profileUrl={profileUrl} formData={formData} /> */}
+					{formData.profile !== signatureInfo.illustrations.avatar.src && <Delete onDelete={onDelete} formData={formData} />}
 				</div>
 			</div>
 		</div>

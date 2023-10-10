@@ -5,7 +5,7 @@ import { CropImage } from "../Modal/CropImage"
 
 import avatarPlaceholder from "../../../assets/images/colibri-avatar.png"
 import { useToggle, useUploadDataUrl } from '../../../hooks'
-import { formInfo } from '../../../utils'
+import { formInfo, signatureInfo } from '../../../utils'
 
 
 
@@ -15,21 +15,25 @@ export function LayoutLeft(props) {
 	const {
 		formErrors,
 		setFormData,
+		formData,
 		language, setLanguage,
 		children,
+
 	} = props
 
 
 	const [file, setFile] = useState(null)
 	const [cropModal, toggleCropModal] = useToggle(false)
-	const [loading, setUploadUrl] = useUploadDataUrl(setFormData, toggleCropModal)
+	const [loading, setUploadUrl, deleteImage] = useUploadDataUrl(setFormData, toggleCropModal)
 
 
 	const resetProfile = () => {
+
+		deleteImage(formData.profile)
 		setFormData((prevState) => {
 			return {
 				...prevState,
-				profile: avatarPlaceholder,
+				profile: signatureInfo.illustrations.avatar.src,
 			};
 		});
 	}
@@ -54,6 +58,7 @@ export function LayoutLeft(props) {
 				error={formErrors.profile?.LANGUAGE[language.index].MESSAGE}
 				language={language}
 				onDelete={resetProfile}
+				formData={formData}
 			/>
 
 			{cropModal ?
